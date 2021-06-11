@@ -6,3 +6,11 @@ eureka:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka, http://eureka7002.com:7002/eureka
 
+ribbon:
+  #建立连接之后冲服务器读取资源所用的时间
+  ReadTimeout:  5000
+  #建立连接需要的时间 单位毫秒
+  ConnectTimeout: 5000
+logging:
+  level:
+    com.cy.springcloud.service.PaymentFeignService: debug
