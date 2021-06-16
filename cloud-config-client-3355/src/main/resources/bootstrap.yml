@@ -1,0 +1,26 @@
+server:
+  port: 3355
+
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: main #分支名称
+      name: config  #配置文件名称
+      profile: dev  #文件后缀   上述综合：main分支上的config-dev.yml的配置文件被读取
+      uri: http://localhost:3344
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
